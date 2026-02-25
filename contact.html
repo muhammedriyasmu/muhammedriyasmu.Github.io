@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Contact | Muhammed Riyas M.U</title>
+  <meta name="description" content="Contact Muhammed Riyas M.U — Flutter Developer. Send a message about projects, internships, or collaborations." />
+
+  <meta property="og:title" content="Contact | Muhammed Riyas M.U" />
+  <meta property="og:description" content="Send a message for collaborations." />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#4f46e5" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand-badge">MR</span>
+          <span>
+            Muhammed Riyas M.U
+            <small>Flutter Developer</small>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn icon" data-action="theme" aria-label="Toggle theme" title="Dark mode">🌙</button>
+          <button class="btn icon mobile-toggle" data-action="nav" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">✉️ Get In Touch</span>
+          <h1 class="h2">Let's Work Together</h1>
+          <p class="desc">Have a project in mind? Let’s discuss how I can help bring your ideas to life.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact info -->
+          <div class="contact-left reveal">
+            <div class="card" style="padding:18px">
+              <h2 style="margin:0 0 10px;font-weight:950">Contact Information</h2>
+              <p style="margin:0 0 16px;color:var(--muted)">
+                I'm always open to discussing new projects, creative ideas, internships, or opportunities
+                to be part of your vision.
+              </p>
+
+              <div style="display:grid;gap:12px">
+                <div class="card" style="padding:14px">
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <div class="brand-badge" style="width:44px;height:44px">✉️</div>
+                    <div>
+                      <div style="font-weight:950">Email</div>
+                      <div style="color:var(--muted);font-weight:800">riyasmu08@gmail.com</div>
+                      <div style="margin-top:8px"><a class="linkbtn" href="mailto:riyasmu08@gmail.com">Send email</a></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="padding:14px">
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <div class="brand-badge" style="width:44px;height:44px">📍</div>
+                    <div>
+                      <div style="font-weight:950">Location</div>
+                      <div style="color:var(--muted);font-weight:800">Kerala, India</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 style="margin:18px 0 10px;font-weight:950">Follow Me</h3>
+              <div class="social-row">
+                <a class="social-chip" href="https://github.com/muhammedriyasmu" target="_blank" rel="noopener noreferrer">
+                  <span aria-hidden="true">🐙</span>
+                  <span class="meta"><b>GitHub</b><span>Projects & code</span></span>
+                </a>
+                <a class="social-chip" href="https://linkedin.com/in/muhammed-riyas-mu" target="_blank" rel="noopener noreferrer">
+                  <span aria-hidden="true">💼</span>
+                  <span class="meta"><b>LinkedIn</b><span>Connect</span></span>
+                </a>
+              </div>
+
+              <div style="margin-top:16px">
+                <button class="btn" data-action="cv">📄 Preview CV</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="contact-right reveal">
+            <div class="form">
+              <h2 style="margin:0 0 12px;font-weight:950">Send a Message</h2>
+              <p style="margin:0 0 18px;color:var(--muted)">
+                This form works on GitHub Pages (no backend). When you click <b>Send</b>, it opens your email app with the message pre-filled.
+              </p>
+
+              <form id="contactForm" novalidate>
+                <div class="field">
+                  <label for="name">Your Name</label>
+                  <input id="name" name="name" type="text" placeholder="John Doe" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="john@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+                </div>
+
+                <button class="btn primary" type="submit">📨 Send Message</button>
+                <div id="contactNotice" class="notice" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:22px" class="reveal">
+          <a class="btn" href="projects.html">View my projects →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Muhammed Riyas M.U • Built with HTML5, CSS, and JavaScript</small>
+    </div>
+  </footer>
+
+  <!-- CV MODAL -->
+  <div class="modal-backdrop" id="cvModal" aria-hidden="true" role="dialog" aria-label="CV preview">
+    <div class="modal">
+      <div class="modal-head">
+        <b>CV Preview</b>
+        <button class="btn icon" data-action="cv-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="cvFrame" title="CV PDF" style="display:none"></iframe>
+        <div class="modal-placeholder" id="cvPlaceholder" style="display:block">
+          <p style="margin:0 0 10px;color:var(--muted)"><b>CV file not found.</b> To enable preview, add your PDF at:</p>
+          <p style="margin:0 0 10px"><span class="doi">assets/Muhammed_Riyas_CV.pdf</span></p>
+          <p style="margin:0;color:var(--muted)">After uploading, refresh the page and click <b>Preview CV</b> again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/script.js"></script>
+</body>
+</html>

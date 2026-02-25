@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Projects | Muhammed Riyas M.U</title>
+  <meta name="description" content="Projects portfolio by Muhammed Riyas M.U — Flutter apps featuring Firebase, APIs, animations, and clean architecture." />
+
+  <meta property="og:title" content="Projects | Muhammed Riyas M.U" />
+  <meta property="og:description" content="Flutter projects portfolio." />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#4f46e5" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand-badge">MR</span>
+          <span>
+            Muhammed Riyas M.U
+            <small>Flutter Developer</small>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn icon" data-action="theme" aria-label="Toggle theme" title="Dark mode">🌙</button>
+          <button class="btn icon mobile-toggle" data-action="nav" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">🧳 Portfolio</span>
+          <p class="desc">A collection of mobile applications and projects showcasing my Flutter development skills.</p>
+        </div>
+
+        <div class="filter reveal">
+          <div class="seg" data-project-filter>
+            <button type="button" class="active" data-filter="all">All Projects</button>
+            <button type="button" data-filter="featured">✨ Featured Only</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project reveal" data-project-card data-featured="true">
+            <img class="img" src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80" alt="Weather Forecast App" loading="lazy" />
+            <div class="pad">
+              <h3 style="margin:0 0 6px;font-weight:900">Weather Forecast App</h3>
+              <p style="margin:0;color:var(--muted)">Real-time weather application with location-based forecasts, interactive maps, and beautiful weather animations. Integrated with OpenWeather API for accurate weather data.</p>
+              <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Weather API</span><span class="tag">Geolocation</span><span class="tag">BLoC</span></div>
+              <div class="card-actions"><a class="linkbtn" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </div>
+          </article>
+          <article class="card project reveal" data-project-card data-featured="true">
+            <img class="img" src="https://images.unsplash.com/photo-1645500357226-9f344e7e8133?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Private Bus: Time & Route View System" loading="lazy" />
+            <div class="pad">
+              <h3 style="margin:0 0 6px;font-weight:900">Private Bus: Time & Route View System</h3>
+              <p style="margin:0;color:var(--muted)">A mobile application designed to help users view private bus timings and route details in real time. The system provides an intuitive user interface for easy access to schedules and routes, improving daily commuting efficiency. Built using Android for the frontend and Python (Flask) with MySQL for backend data management.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Android</span><span class="tag">Flask</span><span class="tag">MySQL</span>
+              </div>
+              <div class="card-actions">
+                <a class="linkbtn" href="https://github.com/muhammedriyasmu/Private-Bus-Time-Route-View-System" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <article class="card project reveal" data-project-card data-featured="true">
+            <img class="img" src="https://plus.unsplash.com/premium_photo-1681487870238-4a2dfddc6bcb?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="TO-DO App" loading="lazy" />
+            <div class="pad">
+              <h3 style="margin:0 0 6px;font-weight:900">TO-DO App</h3>
+              <p style="margin:0;color:var(--muted)">A Flutter-based task management application that allows users to add tasks with a title and description, view them in an organized list, mark tasks as completed or pending, and delete tasks when no longer needed. The app uses Hive for fast, offline local data storage and displays the current date on the home screen using the intl package. Designed with a simple and intuitive user interface, the application focuses on efficient task tracking and offline usability.</p>
+              <div class="tags">
+                <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Hive</span>
+              </div>
+              <div class="card-actions">
+                <a class="linkbtn" href="https://github.com/muhammedriyasmu/TO-DO_App" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:26px" class="reveal">
+          <a class="btn" href="contact.html">Want to build something? →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Muhammed Riyas M.U • Built with HTML5, CSS, and JavaScript</small>
+    </div>
+  </footer>
+
+  <!-- CV MODAL (available site-wide) -->
+  <div class="modal-backdrop" id="cvModal" aria-hidden="true" role="dialog" aria-label="CV preview">
+    <div class="modal">
+      <div class="modal-head">
+        <b>CV Preview</b>
+        <button class="btn icon" data-action="cv-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="cvFrame" title="CV PDF" style="display:none"></iframe>
+        <div class="modal-placeholder" id="cvPlaceholder" style="display:block">
+          <p style="margin:0 0 10px;color:var(--muted)"><b>CV file not found.</b> To enable preview, add your PDF at:</p>
+          <p style="margin:0 0 10px"><span class="doi">assets/Muhammed_Riyas_CV.pdf</span></p>
+          <p style="margin:0;color:var(--muted)">After uploading, refresh the page and click <b>Preview CV</b> again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/script.js"></script>
+</body>
+</html>
