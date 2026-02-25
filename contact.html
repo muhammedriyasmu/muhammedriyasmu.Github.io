@@ -97,10 +97,6 @@
                   <span class="meta"><b>LinkedIn</b><span>Connect</span></span>
                 </a>
               </div>
-
-              <div style="margin-top:16px">
-                <button class="btn" data-action="cv">📄 Preview CV</button>
-              </div>
             </div>
           </div>
 
@@ -145,25 +141,6 @@
       <small>© <span id="year"></span> Muhammed Riyas M.U • Built with HTML5, CSS, and JavaScript</small>
     </div>
   </footer>
-
-  <!-- CV MODAL -->
-  <div class="modal-backdrop" id="cvModal" aria-hidden="true" role="dialog" aria-label="CV preview">
-    <div class="modal">
-      <div class="modal-head">
-        <b>CV Preview</b>
-        <button class="btn icon" data-action="cv-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body">
-        <iframe id="cvFrame" title="CV PDF" style="display:none"></iframe>
-        <div class="modal-placeholder" id="cvPlaceholder" style="display:block">
-          <p style="margin:0 0 10px;color:var(--muted)"><b>CV file not found.</b> To enable preview, add your PDF at:</p>
-          <p style="margin:0 0 10px"><span class="doi">assets/Muhammed_Riyas_CV.pdf</span></p>
-          <p style="margin:0;color:var(--muted)">After uploading, refresh the page and click <b>Preview CV</b> again.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="js/script.js"></script>
 </body>
