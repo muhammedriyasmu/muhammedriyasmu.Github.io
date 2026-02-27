@@ -48,28 +48,74 @@ function updateThemeIcon(){
 }
 
 // --------------------
-// Mobile nav
+// Mobile nav (updated)
 // --------------------
-function toggleMobileNav(){
-  const mobile = qs('.nav-links');
-  if(!mobile) return;
-  const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
-  if(!isMobileMode) return;
+function toggleMobileNav(e){
+  if (e) e.preventDefault();
 
-  mobile.classList.toggle('mobile');
-  const expanded = mobile.classList.contains('mobile');
+  const nav = qs('.nav-links');
   const btn = qs('[data-action="nav"]');
-  if(btn) btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
+
+  if(!nav || !btn) return;
+
+  // If not mobile, ensure closed and exit
+  if(!isMobileMode){
+    nav.classList.remove('mobile');
+    btn.setAttribute('aria-expanded', 'false');
+    return;
+  }
+
+  // Toggle open/close
+  nav.classList.toggle('mobile');
+  const expanded = nav.classList.contains('mobile');
+  btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
 }
 
 function closeMobileNav(){
-  const mobile = qs('.nav-links');
-  if(!mobile) return;
-  mobile.classList.remove('mobile');
+  const nav = qs('.nav-links');
   const btn = qs('[data-action="nav"]');
+  if(!nav) return;
+
+  nav.classList.remove('mobile');
   if(btn) btn.setAttribute('aria-expanded', 'false');
 }
 
+// --------------------
+// Bindings (call once)
+// --------------------
+(function initMobileNav(){
+  const btn = qs('[data-action="nav"]');
+  const nav = qs('.nav-links');
+  if(!btn || !nav) return;
+
+  // Toggle on hamburger click
+  btn.addEventListener('click', toggleMobileNav);
+
+  // Close when clicking a link
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMobileNav);
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
+    if(!isMobileMode) return;
+
+    const clickedInsideNav = nav.contains(e.target);
+    const clickedButton = btn.contains(e.target);
+
+    if(!clickedInsideNav && !clickedButton){
+      closeMobileNav();
+    }
+  });
+
+  // Reset on resize (moving from mobile -> desktop)
+  window.addEventListener('resize', () => {
+    const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
+    if(!isMobileMode) closeMobileNav();
+  });
+})();
 // --------------------
 // Scroll reveal
 // --------------------
