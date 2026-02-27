@@ -1,62 +1,54 @@
-# Portfolio (Pure HTML5 Remake)
+🚀 Muhammed Riyas M.U — Portfolio
 
-This folder is a **framework-free** portfolio remake using only:
-- HTML5
-- CSS3
-- Vanilla JavaScript
+Personal portfolio website showcasing my skills, projects, and experience as a Flutter Developer.
 
-It’s designed to work perfectly on **GitHub Pages** (no build step, no Node).
+🌐 Live: https://muhammedriyasmu.github.io/
 
----
+👋 About Me
 
-## Quick start (local)
+Flutter developer from Kerala, India, focused on building clean, responsive, and user-friendly applications. Passionate about mobile development, modern UI, and writing maintainable code.
 
-Just open `index.html` in your browser.
+🛠️ Skills & Tech
 
----
+Flutter, Dart
 
-## GitHub Pages deploy
+HTML, CSS, JavaScript
 
-1. Create a repo (example: `portfolio-html`).
-2. Upload all files from this folder.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main** (or master) and **/(root)**
-5. Save. Your site will be live in a minute.
+Responsive UI & UX
 
----
+Git & GitHub
 
-## Customize your email, GitHub, LinkedIn, CV
+GitHub Pages deployment
 
-Open `js/script.js` and edit the `CONFIG` values:
+✨ Highlights
 
-- `emailTo` (your email)
-- `githubUrl`
-- `linkedinUrl`
-- `cvPath`
+Mobile-first, fully responsive design
 
-> The contact form uses **mailto** so it works on GitHub Pages without a backend.
+Modern navigation with mobile menu
 
----
+Dark mode support 🌙
 
-## Enable CV preview
+Clean UI and smooth interactions
 
-Add your CV PDF at:
+Fast and lightweight
 
-```
-assets/Muhammed_Riyas_CV.pdf
-```
+📂 Structure
+index.html
+about.html
+projects.html
+contact.html
+assets/
+css/
+js/
+🚀 Run Locally
+git clone https://github.com/muhammedriyasmu/muhammedriyasmu.github.io.git
+open index.html
+📬 Contact
 
-Then refresh the site and click **Preview CV**.
+🌐 Portfolio: https://muhammedriyasmu.github.io
 
----
+💼 LinkedIn: www.linkedin.com/in/muhammed-riyas-mu
 
-## SEO
+📧 Email: riyasmu08@gmail.com
 
-Each page already includes:
-- Title + meta description
-- Open Graph tags
-- Twitter card tag
-
-Update the meta descriptions if you want more targeted keywords.
+Built with ❤️ by Muhammed Riyas M.U
