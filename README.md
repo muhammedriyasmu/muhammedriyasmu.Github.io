@@ -1,4 +1,5 @@
 🚀 Muhammed Riyas M.U — Portfolio
+----------------------------------------
 
 Personal portfolio website showcasing my skills, projects, and experience as a Flutter Developer.
 
@@ -32,15 +33,9 @@ Clean UI and smooth interactions
 
 Fast and lightweight
 
-📂 Structure
-index.html
-about.html
-projects.html
-contact.html
-assets/
-css/
-js/
+
 🚀 Run Locally
+-------------------------------------
 git clone https://github.com/muhammedriyasmu/muhammedriyasmu.github.io.git
 open index.html
 📬 Contact
