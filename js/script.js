@@ -1,18 +1,18 @@
 /*
   Portfolio HTML5 remake (no build tools).
-  - Dark mode toggle (saved to localStorage)
+  - Theme preference
   - Mobile nav toggle
   - Scroll reveal animations
   - Projects filter
-  - CV preview modal (PDF embed if present)
-  - Contact form (JS-only): opens email client via mailto + shows success message
+  - CV preview modal
+  - Contact form mailto flow
 */
 
 const CONFIG = {
   name: 'Muhammed Riyas M.U',
   role: 'Flutter Developer',
   location: 'Kerala, India',
-  emailTo: 'riyasmu08@gmail.com.com',
+  emailTo: 'riyasmu08@gmail.com',
   githubUrl: 'https://github.com/muhammedriyasmu',
   linkedinUrl: 'https://linkedin.com/in/muhammed-riyas-mu',
   cvPath: 'assets/Muhammed_Riyas_CV.pdf'
@@ -21,20 +21,16 @@ const CONFIG = {
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-// --------------------
-// Theme
-// --------------------
 (function initTheme(){
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = saved || (prefersDark ? 'dark' : 'light');
-  document.documentElement.dataset.theme = theme;
+  document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
 })();
 
 function toggleTheme(){
-  const now = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = now;
-  localStorage.setItem('theme', now);
+  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('theme', next);
   updateThemeIcon();
 }
 
@@ -44,100 +40,75 @@ function updateThemeIcon(){
   const isDark = document.documentElement.dataset.theme === 'dark';
   btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   btn.title = isDark ? 'Light mode' : 'Dark mode';
-  btn.innerHTML = isDark ? '☀️' : '🌙';
+  btn.textContent = isDark ? 'Light' : 'Dark';
 }
 
-// --------------------
-// Mobile nav (updated)
-// --------------------
 function toggleMobileNav(e){
-  if (e) e.preventDefault();
+  if(e) e.preventDefault();
 
   const nav = qs('.nav-links');
   const btn = qs('[data-action="nav"]');
-  const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
+  const isMobileMode = window.matchMedia('(max-width: 760px)').matches;
 
   if(!nav || !btn) return;
 
-  // If not mobile, ensure closed and exit
   if(!isMobileMode){
     nav.classList.remove('mobile');
     btn.setAttribute('aria-expanded', 'false');
     return;
   }
 
-  // Toggle open/close
   nav.classList.toggle('mobile');
-  const expanded = nav.classList.contains('mobile');
-  btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  btn.setAttribute('aria-expanded', nav.classList.contains('mobile') ? 'true' : 'false');
 }
 
 function closeMobileNav(){
   const nav = qs('.nav-links');
   const btn = qs('[data-action="nav"]');
   if(!nav) return;
-
   nav.classList.remove('mobile');
   if(btn) btn.setAttribute('aria-expanded', 'false');
 }
 
-// --------------------
-// Bindings (call once)
-// --------------------
 (function initMobileNav(){
   const btn = qs('[data-action="nav"]');
   const nav = qs('.nav-links');
   if(!btn || !nav) return;
 
-  // Toggle on hamburger click
   btn.addEventListener('click', toggleMobileNav);
 
-  // Close when clicking a link
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMobileNav);
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileNav);
   });
 
-  // Close when clicking outside
   document.addEventListener('click', (e) => {
-    const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
+    const isMobileMode = window.matchMedia('(max-width: 760px)').matches;
     if(!isMobileMode) return;
-
-    const clickedInsideNav = nav.contains(e.target);
-    const clickedButton = btn.contains(e.target);
-
-    if(!clickedInsideNav && !clickedButton){
-      closeMobileNav();
-    }
+    if(nav.contains(e.target) || btn.contains(e.target)) return;
+    closeMobileNav();
   });
 
-  // Reset on resize (moving from mobile -> desktop)
   window.addEventListener('resize', () => {
-    const isMobileMode = window.matchMedia('(max-width: 880px)').matches;
-    if(!isMobileMode) closeMobileNav();
+    if(!window.matchMedia('(max-width: 760px)').matches) closeMobileNav();
   });
 })();
-// --------------------
-// Scroll reveal
-// --------------------
+
 function initReveal(){
   const items = qsa('.reveal');
   if(items.length === 0) return;
 
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.classList.add('show');
-        io.unobserve(e.target);
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.14 });
 
-  items.forEach(el => io.observe(el));
+  items.forEach((item) => io.observe(item));
 }
 
-// --------------------
-// Projects filter
-// --------------------
 function initProjectsFilter(){
   const seg = qs('[data-project-filter]');
   if(!seg) return;
@@ -148,12 +119,12 @@ function initProjectsFilter(){
 
   const apply = (mode) => {
     const featuredOnly = mode === 'featured';
-    cards.forEach(c => {
-      const isFeatured = c.dataset.featured === 'true';
-      c.style.display = (!featuredOnly || isFeatured) ? '' : 'none';
+    cards.forEach((card) => {
+      const isFeatured = card.dataset.featured === 'true';
+      card.style.display = (!featuredOnly || isFeatured) ? '' : 'none';
     });
-    allBtn.classList.toggle('active', mode === 'all');
-    featBtn.classList.toggle('active', mode === 'featured');
+    allBtn?.classList.toggle('active', mode === 'all');
+    featBtn?.classList.toggle('active', mode === 'featured');
   };
 
   allBtn?.addEventListener('click', () => apply('all'));
@@ -161,28 +132,91 @@ function initProjectsFilter(){
   apply('all');
 }
 
-// --------------------
-// CV modal
-// --------------------
+function initHeroParallax(){
+  const hero = qs('.hero');
+  const visual = qs('.hero-visual');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!hero || !visual || reduceMotion) return;
+
+  const onMove = (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) - 0.5;
+    const y = ((e.clientY - rect.top) / rect.height) - 0.5;
+    visual.style.transform = `translate3d(${x * 16}px, ${y * 10}px, 0)`;
+  };
+
+  const reset = () => {
+    visual.style.transform = 'translate3d(0,0,0)';
+  };
+
+  hero.addEventListener('mousemove', onMove);
+  hero.addEventListener('mouseleave', reset);
+}
+
+function initCardTilt(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const desktop = window.matchMedia('(min-width: 981px)').matches;
+  if(reduceMotion || !desktop) return;
+
+  qsa('.project-card, .work-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotateY = (x - 0.5) * 5;
+      const rotateX = (0.5 - y) * 4;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+function initVantaBackground(){
+  const host = qs('#vanta-bg');
+  if(!host || !document.body.classList.contains('has-vanta')) return;
+  if(typeof VANTA === 'undefined' || !VANTA.GLOBE) return;
+
+  if(window.__vantaInstance && typeof window.__vantaInstance.destroy === 'function'){
+    window.__vantaInstance.destroy();
+  }
+
+  window.__vantaInstance = VANTA.GLOBE({
+    el: '#vanta-bg',
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0xf4f4f4,
+    color: 0x31262b,
+    color2: 0xffffff,
+    size: 1.0
+  });
+}
+
 function openCVModal(){
   const backdrop = qs('#cvModal');
   if(!backdrop) return;
+
   backdrop.classList.add('show');
   backdrop.setAttribute('aria-hidden', 'false');
 
   const frame = qs('#cvFrame');
   const placeholder = qs('#cvPlaceholder');
 
-  // We can't reliably check file existence on static hosting without a fetch.
-  // We'll try fetch; if blocked or missing, fallback to placeholder.
   if(frame){
     frame.src = CONFIG.cvPath;
   }
 
   if(frame && placeholder){
     fetch(CONFIG.cvPath, { method: 'HEAD' })
-      .then(r => {
-        if(r.ok){
+      .then((response) => {
+        if(response.ok){
           frame.style.display = 'block';
           placeholder.style.display = 'none';
         } else {
@@ -191,7 +225,6 @@ function openCVModal(){
         }
       })
       .catch(() => {
-        // On some hosts HEAD may be blocked; still try showing iframe.
         frame.style.display = 'block';
         placeholder.style.display = 'none';
       });
@@ -210,9 +243,6 @@ function closeCVModal(){
   document.body.style.overflow = '';
 }
 
-// --------------------
-// Contact form (mailto)
-// --------------------
 function initContactForm(){
   const form = qs('#contactForm');
   if(!form) return;
@@ -222,9 +252,10 @@ function initContactForm(){
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = (qs('#name')?.value || '').trim();
-    const email = (qs('#email')?.value || '').trim();
-    const msg = (qs('#message')?.value || '').trim();
+    const name = (qs('#name', form)?.value || '').trim();
+    const email = (qs('#email', form)?.value || '').trim();
+    const msg = (qs('#message', form)?.value || '').trim();
+    const projectType = qs('input[name="projectType"]:checked', form)?.value || 'General Inquiry';
 
     if(!name || !email || !msg){
       if(notice){
@@ -235,14 +266,13 @@ function initContactForm(){
     }
 
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n\n— Sent from portfolio site`);
-
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${msg}\n\nSent from portfolio site`
+    );
     const mailto = `mailto:${CONFIG.emailTo}?subject=${subject}&body=${body}`;
 
-    // Open user's email client
     window.location.href = mailto;
 
-    // UX confirmation
     if(notice){
       notice.textContent = "Message prepared in your email app. If it didn't open, copy the message and email me directly.";
       notice.classList.add('show');
@@ -252,10 +282,11 @@ function initContactForm(){
   });
 }
 
-// --------------------
-// Wire up actions
-// --------------------
 document.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    document.body.classList.add('loaded');
+  });
+
   const themeBtn = qs('[data-action="theme"]');
   themeBtn?.addEventListener('click', toggleTheme);
   updateThemeIcon();
@@ -263,12 +294,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const navBtn = qs('[data-action="nav"]');
   navBtn?.addEventListener('click', toggleMobileNav);
 
-  qsa('.nav-links a').forEach(a => {
-    a.addEventListener('click', closeMobileNav);
+  qsa('.nav-links a').forEach((link) => {
+    link.addEventListener('click', closeMobileNav);
   });
 
-  // CV modal
-  qsa('[data-action="cv"]').forEach(btn => btn.addEventListener('click', openCVModal));
+  qsa('[data-action="cv"]').forEach((btn) => btn.addEventListener('click', openCVModal));
   qs('[data-action="cv-close"]')?.addEventListener('click', closeCVModal);
   qs('#cvModal')?.addEventListener('click', (e) => {
     if(e.target && e.target.id === 'cvModal') closeCVModal();
@@ -280,4 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initProjectsFilter();
   initContactForm();
+  initHeroParallax();
+  initCardTilt();
+  initVantaBackground();
 });

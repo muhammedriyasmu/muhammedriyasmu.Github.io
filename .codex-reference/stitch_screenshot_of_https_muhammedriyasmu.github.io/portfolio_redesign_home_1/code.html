@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muhammed Riyas M.U | Digital Curator &amp; Flutter Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "inverse-surface": "#2e3132",
+                "surface": "#f8f9fa",
+                "background": "#f8f9fa",
+                "on-background": "#191c1d",
+                "tertiary": "#3f4959",
+                "on-tertiary-fixed": "#121c2a",
+                "surface-dim": "#d9dadb",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#ffb0cd",
+                "tertiary-container": "#576171",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "secondary": "#b4136d",
+                "on-secondary-container": "#600037",
+                "primary-container": "#4f46e5",
+                "surface-container": "#edeeef",
+                "outline": "#777587",
+                "primary": "#3525cd",
+                "error-container": "#ffdad6",
+                "surface-container-low": "#f3f4f5",
+                "on-tertiary-fixed-variant": "#3d4756",
+                "primary-fixed-dim": "#c3c0ff",
+                "primary-fixed": "#e2dfff",
+                "outline-variant": "#c7c4d8",
+                "surface-container-highest": "#e1e3e4",
+                "inverse-primary": "#c3c0ff",
+                "on-primary-fixed-variant": "#3323cc",
+                "tertiary-fixed-dim": "#bdc7d9",
+                "surface-tint": "#4d44e3",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#3e0022",
+                "on-secondary-fixed-variant": "#8c0053",
+                "on-surface": "#191c1d",
+                "surface-bright": "#f8f9fa",
+                "secondary-container": "#fd56a7",
+                "inverse-on-surface": "#f0f1f2",
+                "tertiary-fixed": "#d9e3f6",
+                "surface-variant": "#e1e3e4",
+                "on-surface-variant": "#464555",
+                "secondary-fixed": "#ffd9e4",
+                "on-primary-container": "#dad7ff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#d2dcef",
+                "surface-container-high": "#e7e8e9",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#0f0069"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm shadow-indigo-500/5 transition-all duration-300">
+<nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-indigo-700">Curator.Dev</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight">
+<a class="text-indigo-700 font-bold border-b-2 border-indigo-600 pb-1" href="#home">Home</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#projects">Projects</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#skills">Skills</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#experience">Experience</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-xl font-headline font-semibold text-sm hover:opacity-80 transition-all active:scale-95">Hire Me</button>
+</nav>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative px-8 py-24 md:py-32 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16" id="home">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold tracking-widest uppercase">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                    Available for Projects
+                </div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                    Muhammed <span class="text-primary italic">Riyas</span> M.U
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl leading-relaxed">
+                    Passionate Flutter developer crafting high-performance, beautiful cross-platform experiences with technical mastery.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-base hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-2 group">
+                        View Projects 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface-container-high text-primary px-8 py-4 rounded-xl font-headline font-bold text-base hover:bg-surface-container-highest transition-all">
+                        Preview CV
+                    </button>
+</div>
+<!-- Social Links -->
+<div class="flex gap-6 pt-8">
+<a class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="p-3 rounded-full bg-white shadow-sm group-hover:shadow-md transition-all">
+<img alt="GitHub Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmTkNJ1o5VPS5Qk20y-vGhtdBLtUd48x_37gwSka46Q5f9a8MEI9nl9m63tN1OcHVJ1uEb8S2jX4S5MqkjhbUb1I6Ii3kKGGJL1m5MANLJCatulrHKNJrZgYrMC1Q5qFQKBcAF3tq3Gdmk6iQ3QUIAANEdZRI9viw787MypYWOaMDuX46FB97z-AjBFgSYnPMNl-grc4kWnMyZJJ-9rMYAy51lITHFSjwYEmWcqq56mBeqzvTCi2IbLZnElk1EAcfLLkXxJHM1gYA"/>
+</span>
+<span class="font-headline font-semibold text-sm">GitHub</span>
+</a>
+<a class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="p-3 rounded-full bg-white shadow-sm group-hover:shadow-md transition-all">
+<img alt="LinkedIn Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEcPGokcsZcIIroYDFGT8KBEKL8VRAzZlB-35yBaGYU4dZfGRjGJbd_f9F15v626Q24knPuygqAuF-uOCsm3asE_NEvf8n_Ylf4GMeK52eP9Xmbhe2nzBd_1EFSL-5ryVOMwGeTzpmQaZxTSv79nvx4NmaGawzg_dX_0o_KoXUQ3AwZnAlWJJsbn3G3Rl0CK4wXlKVmYgcK3sG_8dEW2cIHjlgFSuKxZi4kXZWC3bC526pS9rHJn25lap-IHmQYR8h4XIxShP7oSQ"/>
+</span>
+<span class="font-headline font-semibold text-sm">LinkedIn</span>
+</a>
+<a class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="p-3 rounded-full bg-white shadow-sm group-hover:shadow-md transition-all text-primary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<span class="font-headline font-semibold text-sm">Email</span>
+</a>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative w-full aspect-square max-w-lg mx-auto">
+<div class="absolute inset-0 bg-primary/10 rounded-[3rem] rotate-6"></div>
+<div class="absolute inset-0 bg-secondary/10 rounded-[3rem] -rotate-3"></div>
+<img class="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern minimalist aesthetic portrait of a young professional developer in a studio setting with soft indigo backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeefGyrbtsy2Fu17cp7BVOXTpohfhx1SAPiipsPfrm7brYGj9Ib-0s1ay65FBaHQkDnpMvO1lsAXHmzV4aZZHvIp0rheDIv9bGoxDzzemDtDCgrmt34j4XsKjZZAFIRv9J1DK8QAiwl2FJEIQYuEYy6iBt-f1ZtXFBlgFuyww6e7GpA07Vqd0dQJsGNWRYnkrxMqG5OLma-8lplHCuogrrihfwy_5Mho9lieRr_rYpuuuFSuWwUzoG9qF2aYJASsxcO-FP4GKyzak"/>
+<!-- Floating Tech Badge -->
+<div class="absolute -bottom-6 -right-6 z-20 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce duration-[3000ms]">
+<img alt="Flutter icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODWcprG7h-7gaHwzHU_fvkP_FTSA6Dcmp23BYL4IEGGzof7m1FGcZU72ndq8_N8DRPdfc37cpmPv0SxBWvCgtKi4pp7WpIbkGywIXEY0AHaZGj1gkLD6q7ujDARwEYPzos5P4FgXeAIYN5E2e18gBmLaSL6fMg2-e0Fsv5SPaGkDydcvbG09TaIFP8u9lp0rJQMFh42tpgDG4F4FpYRjCyTgPG_ylM2tNoZHb_xc4XMUmhrJ5GEIoXsH_bOOjOoYPYwi746Vb6Ys"/>
+<div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Expertise</div>
+<div class="font-headline font-bold text-on-surface">Flutter Dev</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects (Bento Grid) -->
+<section class="py-24 bg-surface-container-low" id="projects">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Featured Projects</h2>
+<p class="text-on-surface-variant max-w-lg text-lg">Curated mobile experiences focused on performance, utility, and elegant UI patterns.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                        Browse all work <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Weather Forecast App -->
+<div class="md:col-span-8 group relative bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+<div class="flex flex-col md:flex-row h-full">
+<div class="flex-1 p-8 md:p-12 flex flex-col justify-between">
+<div>
+<div class="flex gap-2 mb-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Flutter</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">API</span>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-4">Weather Forecast App</h3>
+<p class="text-on-surface-variant leading-relaxed">A hyper-local weather application with dynamic animations, detailed forecasts, and interactive mapping features.</p>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<a class="flex items-center gap-2 font-headline font-bold text-primary group-hover:translate-x-2 transition-transform" href="#">
+                                        GitHub Repository <span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="flex-1 min-h-[300px] relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Mobile app interface displaying weather forecast with sleek blue gradients and glassmorphism UI elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkqwM43ZNWYBH5YTqY6UnmARF_GYNuVxUAXd981LNRDOwkV-X1dQCIRfhjbn9bV2ilIOf3PAHayAWAC1QgnIc20Rxrk-Ey4fQPL9nPsAg_c9fkfpXWGx5U1Oa4ZuecbDWRAuoKBtTXeAaYTNaA6oM07zjsNdrbNGFyrm1D0Wpm_TByQWvcx4uRFhkKDQyUcZo0SwPdUoo2nA_b1LY2FM9OXPELjlrChMj1O4DPM0iAz1MaJtA37o7p-1DWWRDrq5a3OEDI4hX004Q"/>
+</div>
+</div>
+</div>
+<!-- VeeChat -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Smartphone screen showing a modern messaging app with clean chat bubbles and vibrant user avatars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr3IgAunXZ090Pcxo-RzJEN5DrYie-FaEmsYir3yW9vlrR4UkofrpyFw6MkCBl5PuXKTKgWGdc2xK3RYUaThXs_qGQCXbjLBhmb8AOEC97hK9D7ol0UkIsihjnsQVVgte_tnRNiIaQ8DZnvFi43BWHaWjEmq36shP378T27MfWk4h6boTidntxCTVqZ5mSCXK8HvYylV3cI5sGOwNebJbG21hDHJ1CH-afyoYUxDVVPyejtHmtmbTNO4H-U568EpSwcH0WUBuqm1Y"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Firebase</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">VeeChat</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Real-time messaging platform with end-to-end encryption and multimedia support.</p>
+<a class="text-primary font-headline font-bold flex items-center gap-2" href="#">GitHub <span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<!-- Private Bus App -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Visual representation of a transit app showing bus routes on a map with clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY1fNN8XJexFXtTvHd-wO2tiMRyD7RI7ESXX5qCVtv71TkGN1jUHi8xOy7ym4CH77LxyqGy3YegdWZ6GRwea7rqpFZjPVhHc0xTFm1u6GD47AK2suvmT7_-d5MJjxXNKTGnT2mpneGsxugKpXPGsG9rg4XLWohO55blOll-TdBMXDrF6Q716sIruHkdqPeG8docOFf5SFiIey9FU716U2h_74a5gp7P9FudLXA4oewMXQWnBP9RnEzOb35Z5QFOkDqn00ITNCYG5g"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Location</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">Bus: Time &amp; Route</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Local transit solution providing real-time scheduling for private bus networks.</p>
+<a class="text-primary font-headline font-bold flex items-center gap-2" href="#">GitHub <span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<!-- Habitflow -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sleek habit tracking app UI with colorful progress circles and minimalist daily checklists" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ3W2ScQxd0Msa1_Zbs9wPLfbYa2KuNiTS3ZZFrHvBOBgj2o0kM9o94WS6BI-RQuA4-IHkpOnyB_RRI9XAtrEbwg75OZbX0hq3owe6xfGWCoCdx0l6LCPOH2BV0SkAzZ6iiTfCzwq7B1XDGa-MrvPX2M-15dJxTBcI7erxhRS_zkaAx_f6iwwwNu4r1P1KmBiZI2oTI-dZBo0IVGQIdBd2z_x3i6jfAoXy2weXzywiKPU1ZbnBhfC5GZNtQIE84H4qk97CqvlDM_c"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Design</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">Habitflow</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A productivity tool designed to help users build and sustain positive daily routines.</p>
+<a class="text-primary font-headline font-bold flex items-center gap-2" href="#">GitHub <span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<!-- TO-DO App -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist todo list application screen with soft pastel colors and fluid task completion animations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7Ubl26_QhWx4WbtLl9nImja2cZGuwKD5RZSmun9VPPt6USRMjcDczGYQjAw74ekwetAWtuPV0LPGr6qkXgjDE2TGx70KHCMVQISRITC1fa35MW7SvLo_8jbnwTTIYF12rcqEx3v8xKBRuLeA76-b4KlGtshedE2IUYXzQzTIC7GURa0xp0HQUZunIhyeSVaPyK3uuQJZB-59XUUlWUFEsj3sxb1JKxt36Wev81cHneBYjP4QX7LEVaiqKi4_i70buU3ahk1VKB2A"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase">Core</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">TO-DO App</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Efficient task management with local storage and priority-based categorization.</p>
+<a class="text-primary font-headline font-bold flex items-center gap-2" href="#">GitHub <span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-24 max-w-7xl mx-auto px-8" id="skills">
+<div class="flex flex-col lg:flex-row gap-20">
+<div class="lg:w-1/3">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Technical Proficiency</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Specializing in modern cross-platform development with a focus on UI excellence and performant backend integration.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="text-primary mb-4"><span class="material-symbols-outlined text-4xl">devices</span></div>
+<div class="font-headline font-bold">Cross-Platform</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="text-secondary mb-4"><span class="material-symbols-outlined text-4xl">bolt</span></div>
+<div class="font-headline font-bold">Performance</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="text-indigo-600 mb-4"><span class="material-symbols-outlined text-4xl">palette</span></div>
+<div class="font-headline font-bold">UI/UX Design</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="text-slate-700 mb-4"><span class="material-symbols-outlined text-4xl">api</span></div>
+<div class="font-headline font-bold">API Logic</div>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3 space-y-10 bg-surface-container-low p-10 md:p-16 rounded-[3rem]">
+<div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+<!-- Flutter -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>Flutter</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container" style="width: 90%"></div>
+</div>
+</div>
+<!-- Dart -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>Dart</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container" style="width: 90%"></div>
+</div>
+</div>
+<!-- Android -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>Android Development</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container" style="width: 75%"></div>
+</div>
+</div>
+<!-- iOS -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>iOS Development</span>
+<span class="text-primary">70%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container" style="width: 70%"></div>
+</div>
+</div>
+<!-- Firebase -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>Firebase</span>
+<span class="text-secondary">85%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-container" style="width: 85%"></div>
+</div>
+</div>
+<!-- Python -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-headline font-bold">
+<span>Python</span>
+<span class="text-secondary">60%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-container" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<!-- Chips cluster -->
+<div class="pt-10 border-t border-outline-variant/20 flex flex-wrap gap-3">
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">BLoC Architecture</span>
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">Provider</span>
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">REST API</span>
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">SQLite</span>
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">Git/GitHub</span>
+<span class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-headline font-bold text-xs">Agile</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience & Publications -->
+<section class="py-24 bg-white" id="experience">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-24">
+<!-- Professional Experience -->
+<div>
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl">work_history</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight">Professional Path</h2>
+</div>
+<div class="relative pl-8 border-l-2 border-outline-variant/30 space-y-12">
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-white"></div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-xl">Junior Flutter Developer</h3>
+<span class="text-sm font-bold text-primary px-3 py-1 bg-primary-fixed rounded-lg">Dec 2023 - Mar 2024</span>
+</div>
+<div class="text-indigo-600 font-bold mb-4">ERE Business Solutions</div>
+<p class="text-on-surface-variant leading-relaxed">Focusing on building scalable cross-platform applications, integrating complex APIs, and optimizing app performance for diverse user bases.</p>
+</div>
+</div>
+</div>
+<!-- Publications -->
+<div>
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-secondary text-4xl">menu_book</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight">Insights &amp; Writing</h2>
+</div>
+<div class="space-y-6">
+<div class="p-8 rounded-[2rem] bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex gap-4 mb-4 items-center">
+<span class="material-symbols-outlined text-secondary">article</span>
+<span class="text-[10px] font-bold text-on-surface-variant tracking-[0.2em] uppercase">Publication</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-4 group-hover:text-primary transition-colors">Leveraging AI to Enhance Data Security</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Exploring the intersection of artificial intelligence and cybersecurity frameworks in modern app development.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                                    Read Article <span class="material-symbols-outlined text-sm">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 py-24 mb-12" id="contact">
+<div class="max-w-7xl mx-auto rounded-[3rem] bg-indigo-950 p-12 md:p-24 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-full h-full bg-primary rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight leading-tight">Ready to build the future together?</h2>
+<p class="text-indigo-200 text-xl leading-relaxed mb-12">Let's discuss how I can bring technical excellence and design-driven development to your next big project.</p>
+<button class="px-10 py-5 bg-white text-indigo-950 rounded-2xl font-headline font-extrabold text-lg hover:bg-primary-fixed transition-all flex items-center gap-3">
+                        Get in Touch <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto py-16 px-8 flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-['Plus_Jakarta_Sans'] font-bold text-2xl text-indigo-700">Curator.Dev</div>
+<p class="font-['Inter'] text-sm text-slate-500 max-w-xs text-center md:text-left">© 2024 Digital Curator Portfolio. Built with technical mastery.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-slate-500 hover:text-indigo-500 hover:underline decoration-indigo-500/30 underline-offset-4 transition-all" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-indigo-500 hover:underline decoration-indigo-500/30 underline-offset-4 transition-all" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-indigo-500 hover:underline decoration-indigo-500/30 underline-offset-4 transition-all" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-indigo-500 hover:underline decoration-indigo-500/30 underline-offset-4 transition-all" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>

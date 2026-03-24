@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VeeChat - AI-Powered Video Interaction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error-container": "#ffdad6",
+                "surface-container-low": "#f3f4f5",
+                "on-primary-fixed": "#0f0069",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#bdc7d9",
+                "on-tertiary-fixed": "#121c2a",
+                "outline": "#777587",
+                "on-secondary-container": "#600037",
+                "secondary-fixed-dim": "#ffb0cd",
+                "secondary-fixed": "#ffd9e4",
+                "on-error": "#ffffff",
+                "surface-container": "#edeeef",
+                "on-surface": "#191c1d",
+                "surface": "#f8f9fa",
+                "tertiary-fixed": "#d9e3f6",
+                "on-tertiary-fixed-variant": "#3d4756",
+                "surface-dim": "#d9dadb",
+                "primary-fixed-dim": "#c3c0ff",
+                "error": "#ba1a1a",
+                "surface-container-high": "#e7e8e9",
+                "tertiary-container": "#576171",
+                "primary": "#3525cd",
+                "surface-tint": "#4d44e3",
+                "secondary": "#b4136d",
+                "on-background": "#191c1d",
+                "primary-container": "#4f46e5",
+                "on-secondary-fixed": "#3e0022",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c7c4d8",
+                "on-surface-variant": "#464555",
+                "inverse-primary": "#c3c0ff",
+                "surface-variant": "#e1e3e4",
+                "inverse-surface": "#2e3132",
+                "on-primary-container": "#dad7ff",
+                "tertiary": "#3f4959",
+                "surface-container-highest": "#e1e3e4",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#8c0053",
+                "on-secondary": "#ffffff",
+                "background": "#f8f9fa",
+                "surface-bright": "#f8f9fa",
+                "on-primary-fixed-variant": "#3323cc",
+                "secondary-container": "#fd56a7",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#e2dfff",
+                "on-tertiary-container": "#d2dcef",
+                "inverse-on-surface": "#f0f1f2"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(53, 37, 205, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-indigo-500/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-indigo-700 font-headline">VeeChat</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-indigo-700 border-b-2 border-indigo-600 pb-1 font-semibold font-headline" href="#">Work</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-all duration-300 font-headline" href="#">Process</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-all duration-300 font-headline" href="#">About</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-all duration-300 font-headline" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 rounded-xl font-headline font-semibold scale-95 active:scale-90 transition-transform hover:opacity-80">
+                Hire Me
+            </button>
+</div>
+</nav>
+<main class="pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter text-primary leading-tight mb-6">
+                    VeeChat
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-10 max-w-lg">
+                    Transform long-form YouTube content into an interactive conversation. Ask questions, get summaries, and extract insights instantly.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-headline font-bold text-lg hover:opacity-90 transition-all editorial-shadow">
+                        View Live Demo
+                    </button>
+<button class="px-8 py-4 bg-surface-container-high text-primary rounded-xl font-headline font-bold text-lg hover:opacity-90 transition-all">
+                        View Source Code
+                    </button>
+</div>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="absolute -inset-4 bg-primary/5 rounded-[2rem] blur-3xl"></div>
+<div class="relative bg-surface-container-lowest p-4 rounded-[2.5rem] editorial-shadow border border-outline-variant/15">
+<img alt="Mobile Chat Interface" class="rounded-[2rem] w-full aspect-[9/16] object-cover" data-alt="Modern mobile app interface mockup showing a clean chat window with blue and white messages over a light grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwHQo3-5kC_BCzR7-hYXPNe4GPMCBilB8C4KeByqs-fJ9n1VoZc8UQ5YsAXPLrkIdwaTZw1qB4R7AVJMOpw5tQQyKFYLHiYGVMy_CUNYUUG7xek3GTVEJQjVSiruoLRiaFSs2dSyr6w5ISj0HIoiDz66qR_FAtcSPTvXpa8dlW323qPpzg49z9f7ktZhwo9f4E3m2wnau4Ps2UOl67ZaM57xh4aQkPuzZsCZN5xdHHuyQOVALaz38411msA2C_L6B1fv4-F4g7Og"/>
+</div>
+</div>
+</section>
+<!-- Technical Foundation -->
+<section class="bg-surface-container-low py-16">
+<div class="max-w-7xl mx-auto px-8">
+<p class="font-headline text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-8 text-center">Built with modern AI stack</p>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<span class="font-headline font-bold text-lg">Python</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">dashboard</span>
+<span class="font-headline font-bold text-lg">Streamlit</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">database</span>
+<span class="font-headline font-bold text-lg">RAG</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+<span class="font-headline font-bold text-lg">Groq LLM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">link</span>
+<span class="font-headline font-bold text-lg">LangChain</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Features -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface tracking-tight mb-4">Sophisticated Interaction.</h2>
+<p class="text-on-surface-variant text-lg">Advanced engineering under the hood, wrapped in a minimalist interface.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-bright transition-all editorial-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3">Transcript Analysis</h3>
+<p class="text-on-surface-variant leading-relaxed">Automatically fetch and process high-fidelity YouTube transcripts with intelligent segmentation.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-bright transition-all editorial-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3">RAG-Powered Chat</h3>
+<p class="text-on-surface-variant leading-relaxed">Context-aware answers powered by vector embeddings and semantic search retrieval.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-bright transition-all editorial-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3">Instant Summarization</h3>
+<p class="text-on-surface-variant leading-relaxed">Condense hours of video content into actionable key takeaways in just a few seconds.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-bright transition-all editorial-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">speed</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3">Groq Acceleration</h3>
+<p class="text-on-surface-variant leading-relaxed">Experience lightning-fast inference for real-time natural language conversations.</p>
+</div>
+</div>
+</section>
+<!-- The Challenge & Solution -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5">
+<div class="inline-flex px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold uppercase tracking-widest mb-6">The Challenge</div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">Extracting value from long-form video shouldn't be a chore.</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Content creators produce incredible depth in long-form videos, but finding that specific bit of advice or technical detail requires manual scrubbing through timelines. This friction leads to lost knowledge and missed insights.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1">check_circle</span>
+<span class="text-on-surface font-medium">Overcomes information overload.</span>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1">check_circle</span>
+<span class="text-on-surface font-medium">Makes video content searchable and structured.</span>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1">check_circle</span>
+<span class="text-on-surface font-medium">Reduces context switching for researchers.</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 relative">
+<div class="bg-surface-container-lowest rounded-xl p-2 editorial-shadow">
+<img alt="Technical Implementation" class="rounded-lg w-full object-cover aspect-[16/9]" data-alt="Close up of a programmer workstation with glowing code on two monitors in a dimly lit studio environment with blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCId_tCWTkckHMIL3RbsI2fEwig3VQHvntn66NFPqRCI-B6hQWcGJX7mdeccBRylNUQDi2lwqGnaWA14nICWbHMz6kquK0euvTvuljFg7WCm60Lr_e70P2Cp4vzdMBZCjb4AtnlVrhNG_l-yjqq2HFUj9R_apcYWUr7vyUgm3ng13QuPT2lWqs-Ul0RS1wDlC4XWgVFulzAnXS18KEOwCQ07szYN7u66iP_--SJgt8DySalP1OY-Ts78SJ9FfuKsLoEQFNBLq0FUso"/>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-primary p-8 rounded-xl text-white max-w-xs editorial-shadow hidden md:block">
+<p class="font-headline text-3xl font-bold mb-2">0.5s</p>
+<p class="text-sm opacity-90">Average response latency using Groq LPU acceleration.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive UI Walkthrough (Bento Grid) -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<h2 class="font-headline text-4xl font-bold text-center mb-16">The Interface</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container p-4 rounded-xl editorial-shadow overflow-hidden">
+<img alt="Main Interface" class="w-full h-full object-cover rounded-lg" data-alt="A clean desktop dashboard showing analytics for video transcripts and chat interaction metrics in a minimalist blue and white design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDKYFA40mhO5yemV6lgBlKHvERUmsIF7fBBDRew_8ZoGbfmJFrmShro35OFzHI0bUtBqADTsjDnZDUazTtsPSzijqveBnUMa7WopyHiEfOa1ckpPx88DX7FdDRBGG_h5gqrCTz9-zpMfb4AJiVpurPTHG_fb2SOewaWT1nbhgk0jAzXKnPhpfTYZgDIK0iCOe1dRAzxyixq45rZAzosD7hXZmPW1uY4NlvrH0uvrUUYqSJF4idcaS6X1cPvDC-7sMbwpxhyj30ZiM"/>
+</div>
+<div class="md:col-span-2 bg-surface-container p-4 rounded-xl editorial-shadow overflow-hidden">
+<img alt="Mobile Flow" class="w-full h-48 object-cover rounded-lg" data-alt="Close up of a hand holding a high-end smartphone displaying a chat interface with clear typography and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpeNkMRX6i1VFIz50JgrhnW81Fqjc6KdWrRJABInaEqZ4BKicYsFHYQYPUasYQjzSK6DPrfcRI5Fr0iIcVcNsXV55eKrQicCma8hvdsMVEtPY5ITkXDEqe8tM-kv7lqOiFMKysMqy1wu9mMezNeK0_ks7KFV_rc7l4bnuy7R75nArmbOdbl9d6qp660DaRYiY7q39yuh9GCvxxubKjr_BdVqsvX1ZSpIaYXOjWWZW0oAKsliBALjpHNQvsfVuIiBipxE99fSqa7Q"/>
+</div>
+<div class="bg-surface-container p-4 rounded-xl editorial-shadow overflow-hidden">
+<img alt="Vector Logic" class="w-full h-48 object-cover rounded-lg" data-alt="Stylized glowing abstract node connections representing a vector database and neural network pathways in deep indigo colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZNf1tyo0YqpLU8RtPFUVtsOOviy-evcfqOXh62yOlybOSadrBaKMNCHEbNe19zBBCNJW_fUwQrv4L1QtwwGQXrILVj_RryI4okFFyplLkNn9RGl2oQQEcTFubIFPOxnn6CA_LLiPIlKRfsaskryN_K0cNvbPOCBr8UkTIw4wGCqtwPzci5JUTgsWyrq6Jp3NZ1fU2_2HchZpvk7U8adcjEUsSl7vFZNShMTuqn0C_o4J38lpcLEHaCYPvDX3IPSSE7-Jqi0XWagc"/>
+</div>
+<div class="bg-surface-container p-4 rounded-xl editorial-shadow overflow-hidden">
+<img alt="Groq Tech" class="w-full h-48 object-cover rounded-lg" data-alt="Highly detailed computer circuitry and chip macro shot with blue and purple neon lighting highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBwHIYgCQ0nwEiR9ipas1DgYNWDK933orGeSQSmxNUROM-Xy7CXmnzGOUD0Rt8ltv78s2Dg51HgKS5A5qzq_WHx4wxgvP4jOVWX2NZ5DYFs1yZkcqFZ6WTonhKlh7vxpzSdKmDuUDb8Kpza6bJBu9c-dmX8NU9a35e00lGEqelpknwnAssP29wjnIYqRsr89VFLVSOGjpbuQzYMGHJ9MbCJAfnHie5V-vy2d7nd5GAeDBGya0QT4zLP8tXm353FQaTDtKf_5Ym6ws"/>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-5xl mx-auto px-8 py-24 text-center">
+<div class="bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-12 md:p-20 text-white editorial-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Interested in the tech?</h2>
+<p class="text-xl md:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
+                        Let's discuss how RAG and Groq can be implemented in your next project. I'm open to collaborations and new opportunities.
+                    </p>
+<button class="px-12 py-4 bg-white text-primary rounded-xl font-headline font-bold text-lg hover:scale-105 transition-transform">
+                        Let's Discuss AI
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/50 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="text-lg font-bold text-slate-900 mb-4 md:mb-0">VeeChat AI</div>
+<div class="text-sm text-slate-500 mb-6 md:mb-0">© 2024 VeeChat AI. Built with Precision.</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Documentation</a>
+</div>
+</div>
+</footer>
+</body></html>
