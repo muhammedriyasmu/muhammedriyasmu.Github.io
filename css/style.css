@@ -2272,6 +2272,17 @@ button,input,textarea{font:inherit}
     padding:6px 9px;
   }
 
+  .skills-chip-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .skills-chip-grid .tag{
+    width:100%;
+    text-align:center;
+  }
+
   .portrait-card img{
     height:380px;
   }
