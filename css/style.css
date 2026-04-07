@@ -395,6 +395,9 @@ button,input,textarea{font:inherit}
 
 .hero-visual{
   position:relative;
+  --hover-x:0px;
+  --hover-y:0px;
+  transform:translate3d(var(--hover-x),var(--hover-y),0);
   transition:transform .45s cubic-bezier(.22,.61,.36,1);
   will-change:transform;
 }
@@ -984,6 +987,34 @@ button,input,textarea{font:inherit}
   color:var(--muted);
 }
 
+.hero-grid,
+.section-row,
+.work-grid,
+.split-section,
+.dual-grid,
+.cta-panel,
+.skills-body-grid,
+.toolchain-panel,
+.contact-layout{
+  transform-style:preserve-3d;
+}
+
+.scroll-3d{
+  --scroll-shift:0px;
+  --scroll-depth:0px;
+  --scroll-scale:1;
+  --scroll-rotate-x:0deg;
+  --scroll-rotate-y:0deg;
+  --hover-rotate-x:0deg;
+  --hover-rotate-y:0deg;
+  --hover-lift:0px;
+  transform:perspective(1200px) translate3d(0,calc(var(--scroll-shift) + var(--hover-lift)),var(--scroll-depth)) rotateX(calc(var(--scroll-rotate-x) + var(--hover-rotate-x))) rotateY(calc(var(--scroll-rotate-y) + var(--hover-rotate-y))) scale(var(--scroll-scale));
+  transform-style:preserve-3d;
+  transform-origin:center center;
+  backface-visibility:hidden;
+  will-change:transform, opacity;
+}
+
 .reveal{
   opacity:0;
   transform:translateY(32px) scale(.985);
@@ -991,10 +1022,18 @@ button,input,textarea{font:inherit}
   transition:opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1), filter .8s cubic-bezier(.22,.61,.36,1);
 }
 
+.reveal.scroll-3d{
+  transform:perspective(1200px) translate3d(0,calc(32px + var(--scroll-shift) + var(--hover-lift)),var(--scroll-depth)) rotateX(calc(var(--scroll-rotate-x) + var(--hover-rotate-x))) rotateY(calc(var(--scroll-rotate-y) + var(--hover-rotate-y))) scale(calc(var(--scroll-scale) * .985));
+}
+
 .reveal.show{
   opacity:1;
   transform:none;
   filter:blur(0);
+}
+
+.reveal.show.scroll-3d{
+  transform:perspective(1200px) translate3d(0,calc(var(--scroll-shift) + var(--hover-lift)),var(--scroll-depth)) rotateX(calc(var(--scroll-rotate-x) + var(--hover-rotate-x))) rotateY(calc(var(--scroll-rotate-y) + var(--hover-rotate-y))) scale(var(--scroll-scale));
 }
 
 @keyframes floatSlow{

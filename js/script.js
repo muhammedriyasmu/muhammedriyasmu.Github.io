@@ -15,11 +15,34 @@ const CONFIG = {
   emailTo: 'riyasmu08@gmail.com',
   githubUrl: 'https://github.com/muhammedriyasmu',
   linkedinUrl: 'https://linkedin.com/in/muhammed-riyas-mu',
-  cvPath: 'assets/Muhammed_Riyas_CV.pdf'
+  cvPath: 'assets/Muhammed_Riyas_CV.pdf',
+  performance: {
+    min3DWidth: 900,
+    minVantaWidth: 1100,
+    minCpuCores: 6,
+    minDeviceMemory: 4
+  }
 };
 
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
+
+function runWhenIdle(callback, timeout = 500){
+  if('requestIdleCallback' in window){
+    window.requestIdleCallback(() => callback(), { timeout });
+    return;
+  }
+  window.setTimeout(callback, 120);
+}
+
+function canRunHeavyMotion(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+  const isWideEnough = window.innerWidth >= CONFIG.performance.min3DWidth;
+  const cores = navigator.hardwareConcurrency || 4;
+  const memory = navigator.deviceMemory || 4;
+  return !reduceMotion && !isCoarse && isWideEnough && cores >= CONFIG.performance.minCpuCores && memory >= CONFIG.performance.minDeviceMemory;
+}
 
 (function initTheme(){
   const saved = localStorage.getItem('theme');
@@ -109,6 +132,106 @@ function initReveal(){
   items.forEach((item) => io.observe(item));
 }
 
+function initScroll3D(){
+  if(!canRunHeavyMotion()) return;
+
+  const groups = [
+    { selector: '.hero-copy, .portrait-card', depth: 'hero' },
+    { selector: '.floating-badge', depth: 'badge' },
+    { selector: '.section-row, .skills-card, .cta-panel, .work-summary-panel, .toolchain-panel, .contact-form-shell, .skills-right', depth: 'section' },
+    { selector: '.work-card, .project-card, .skill-card-large, .info-card, .contact-link-card', depth: 'card' }
+  ];
+
+  const items = [];
+  const seen = new Set();
+
+  groups.forEach(({ selector, depth }) => {
+    qsa(selector).forEach((element) => {
+      if(seen.has(element)) return;
+      seen.add(element);
+      element.classList.add('scroll-3d');
+      element.dataset.scrollDepth = depth;
+      items.push(element);
+    });
+  });
+
+  if(items.length === 0) return;
+
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  let ticking = false;
+
+  const update = () => {
+    const vh = window.innerHeight || 1;
+    const vw = window.innerWidth || 1;
+    const compact = vw < 760;
+
+    items.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const centerY = rect.top + (rect.height / 2);
+      const centerX = rect.left + (rect.width / 2);
+      const progressY = clamp((centerY - (vh / 2)) / (vh / 2), -1.2, 1.2);
+      const progressX = clamp((centerX - (vw / 2)) / (vw / 2), -1, 1);
+      const visibility = 1 - Math.min(Math.abs(progressY), 1);
+      const depth = element.dataset.scrollDepth;
+
+      let shift = progressY * -24;
+      let rotateX = progressY * -7;
+      let rotateY = progressX * 6;
+      let translateZ = visibility * 42;
+      let scale = 0.94 + (visibility * 0.1);
+
+      if(depth === 'section'){
+        shift *= 0.7;
+        rotateX *= 0.6;
+        rotateY *= 0.45;
+        translateZ *= 0.95;
+        scale = 0.965 + (visibility * 0.07);
+      } else if(depth === 'card'){
+        shift *= 0.55;
+        rotateX *= 0.75;
+        rotateY *= 0.7;
+        translateZ *= 1.15;
+        scale = 0.92 + (visibility * 0.12);
+      } else if(depth === 'badge'){
+        shift *= 0.9;
+        rotateX *= 1.1;
+        rotateY *= 1.15;
+        translateZ *= 1.45;
+        scale = 0.98 + (visibility * 0.08);
+      } else if(depth === 'hero'){
+        translateZ *= 1.3;
+        scale = 0.965 + (visibility * 0.09);
+      }
+
+      if(compact){
+        shift *= 0.45;
+        rotateX *= 0.4;
+        rotateY *= 0.35;
+        translateZ *= 0.45;
+        scale = 0.98 + ((scale - 0.98) * 0.45);
+      }
+
+      element.style.setProperty('--scroll-shift', `${shift.toFixed(2)}px`);
+      element.style.setProperty('--scroll-depth', `${translateZ.toFixed(2)}px`);
+      element.style.setProperty('--scroll-scale', scale.toFixed(4));
+      element.style.setProperty('--scroll-rotate-x', `${rotateX.toFixed(2)}deg`);
+      element.style.setProperty('--scroll-rotate-y', `${rotateY.toFixed(2)}deg`);
+    });
+
+    ticking = false;
+  };
+
+  const requestTick = () => {
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  update();
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', requestTick);
+}
+
 function initProjectsFilter(){
   const seg = qs('[data-project-filter]');
   if(!seg) return;
@@ -142,11 +265,13 @@ function initHeroParallax(){
     const rect = hero.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) - 0.5;
     const y = ((e.clientY - rect.top) / rect.height) - 0.5;
-    visual.style.transform = `translate3d(${x * 16}px, ${y * 10}px, 0)`;
+    visual.style.setProperty('--hover-x', `${x * 16}px`);
+    visual.style.setProperty('--hover-y', `${y * 10}px`);
   };
 
   const reset = () => {
-    visual.style.transform = 'translate3d(0,0,0)';
+    visual.style.setProperty('--hover-x', '0px');
+    visual.style.setProperty('--hover-y', '0px');
   };
 
   hero.addEventListener('mousemove', onMove);
@@ -154,22 +279,27 @@ function initHeroParallax(){
 }
 
 function initCardTilt(){
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const desktop = window.matchMedia('(min-width: 981px)').matches;
-  if(reduceMotion || !desktop) return;
+  if(!desktop || !canRunHeavyMotion()) return;
 
   qsa('.project-card, .work-card').forEach((card) => {
+    card.classList.add('scroll-3d');
+
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
       const rotateY = (x - 0.5) * 5;
       const rotateX = (0.5 - y) * 4;
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      card.style.setProperty('--hover-rotate-x', `${rotateX.toFixed(2)}deg`);
+      card.style.setProperty('--hover-rotate-y', `${rotateY.toFixed(2)}deg`);
+      card.style.setProperty('--hover-lift', '-6px');
     });
 
     card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
+      card.style.setProperty('--hover-rotate-x', '0deg');
+      card.style.setProperty('--hover-rotate-y', '0deg');
+      card.style.setProperty('--hover-lift', '0px');
     });
   });
 }
@@ -178,6 +308,9 @@ function initVantaBackground(){
   const host = qs('#vanta-bg');
   if(!host || !document.body.classList.contains('has-vanta')) return;
   if(typeof VANTA === 'undefined' || !VANTA.GLOBE) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(pointer: coarse)').matches) return;
+  if(window.innerWidth < CONFIG.performance.minVantaWidth) return;
 
   if(window.__vantaInstance && typeof window.__vantaInstance.destroy === 'function'){
     window.__vantaInstance.destroy();
@@ -311,6 +444,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectsFilter();
   initContactForm();
   initHeroParallax();
-  initCardTilt();
-  initVantaBackground();
+
+  runWhenIdle(() => {
+    initScroll3D();
+    initCardTilt();
+  }, 700);
+
+  window.addEventListener('load', () => {
+    runWhenIdle(() => {
+      initVantaBackground();
+    }, 1200);
+  }, { once: true });
 });
